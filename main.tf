@@ -1,0 +1,1 @@
+module \"vpc\" { source = \"./vpc\" }\nmodule \"sg\" { source = \"./security_groups\" }\nmodule \"compute\" { source = \"./compute\" }

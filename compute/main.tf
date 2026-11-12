@@ -1,0 +1,1 @@
+resource \"aws_instance\" \"app\" { count = 2; instance_type = \"t3.micro\"; ami = \"ami-0c55b159cbfafe1f0\" }

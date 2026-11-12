@@ -1,2 +1,1 @@
-# zero-trust-devops
-Zero-Trust DevOps project for portfolio.
+# Zero-Trust DevOps Project\n\nThis project implements a secure infrastructure with VPC, SGs, and Compute.
