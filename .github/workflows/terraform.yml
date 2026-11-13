@@ -13,13 +13,20 @@ jobs:
     name: 'Terraform'
     runs-on: ubuntu-latest
     env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_ACCESS_KEY_ID: test
+      AWS_SECRET_ACCESS_KEY: test
       AWS_REGION: 'us-east-1'
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Start LocalStack
+        run: |
+          pip install localstack
+          localstack start -d
+          echo "Waiting for LocalStack to be ready..."
+          sleep 30
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
